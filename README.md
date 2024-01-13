@@ -1,5 +1,8 @@
 # cse210-ww-student-template
-This is the starter code for students in the worldwide content version of CSE 210.
+This is the starter code in the curse CSE 210.
+
+In this proyect we'll learn to code with classes in c#, This is Andrea Vivas
+and I'll let you know the changes or the learnings that I obtain with each proyect.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
