@@ -31,14 +31,14 @@ class Program
         else
         {
             Console.WriteLine("");
-            Console.WriteLine($"You guessed it in {i} tries!");
+            Console.WriteLine($"You guessed it in {i} tries, congrats!");
         }
-        //}
+        }
 
-        //Console.WriteLine("Do you want to play again? (1 - yes / 0 - no) ");
-        //string answer = Console.ReadLine();
-        //play = int.Parse(answer);
+        //Console.Write("Enter a number (0 to finish the game): ");
+        //string userResponse = Console.ReadLine();
+        //play = int.Parse(userResponse);
 
-        }                    
+        //}                    
     }
 }
