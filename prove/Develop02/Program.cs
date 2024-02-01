@@ -1,41 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
-
-static class Program
+public class Program
 {
-    private static List<Entry> _entries = new List<Entry>();
+    public static List<Entry> _entries = new List<Entry>();
 
     static void Main(string[] args)
     {
         DisplayWelcomeMessage();
         int userOption = PromptUserOption();
 
-        while (userOption >= 1 && userOption <5)
+        while (userOption >= 1 && userOption <= 5)
         {
             if (userOption == 1)
             {
-                Entry entry1 = new Entry();
-                entry1._date = DateTime.Now.ToString("MM/dd/yyyy");
-                entry1._promptText = PromptGenerator.GetRandomPrompt();
-                Console.WriteLine(entry1._promptText);
-                entry1._entryText = Console.ReadLine();
-
-                _entries.Add(entry1);
+                Journal.AddEntry();
             }
             else if (userOption == 2)
             {
-
-                Console.WriteLine("YOUR JURNAL");
-                Console.WriteLine("");
-
-                foreach (Entry e in _entries)
-                {
-                    Console.WriteLine($"Date: {e._date} - Prompt: {e._promptText}");
-                    Console.WriteLine($"{e._entryText}");
-                }
-                
-                Console.WriteLine("");
+                Journal.DisplayAll();
             }
             else if (userOption == 3)
             {
@@ -48,10 +32,6 @@ static class Program
                 Console.WriteLine("What is the filename?");
                 string fileToSave = Console.ReadLine();
                 Journal.SaveToFile(fileToSave);
-            }
-            else
-            {
-                Console.WriteLine("Invalid option!");
             }
 
             userOption = PromptUserOption();
@@ -76,5 +56,4 @@ static class Program
 
         return option;
     }
-
 }

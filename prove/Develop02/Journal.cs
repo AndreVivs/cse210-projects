@@ -6,20 +6,28 @@ public class Journal
 {
     public static List<Entry> _entries = new List<Entry>();
 
-    public void AddEntry(Entry entry)
+    public static void AddEntry()
     {
-        _entries.Add(entry);
+      Entry entry1 = new Entry();
+      entry1._date = DateTime.Now.ToString("MM/dd/yyyy");
+      entry1._promptText = PromptGenerator.GetRandomPrompt();
+      Console.WriteLine(entry1._promptText);
+      entry1._entryText = Console.ReadLine();
+
+      _entries.Add(entry1);
     }
 
     public static void DisplayAll()
     {
-        Console.WriteLine("holaaaaaaa :)");
+        Console.WriteLine("YOUR JOURNAL");
+        Console.WriteLine("");
 
-        //foreach (Entry e in _entries)
-        //{
-        //    Console.WriteLine($"Date: {e._date} - Prompt: {e._promptText}");
-        //    Console.WriteLine($"{e._entryText}");
-        //}
+        foreach (Entry e in _entries)
+        {
+            e.Display();
+        }
+
+        Console.WriteLine("");
     }
 
     public static void SaveToFile(string fileToSave)
