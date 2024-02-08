@@ -32,7 +32,6 @@ public class Journal
 
     public static void SaveToFile(string fileToSave)
     {
-      //Console.WriteLine($"Estos son los datos {_entries}, {fileToSave}");
         if (fileToSave != null)
         {
             using (StreamWriter outputFile = new StreamWriter(fileToSave))
@@ -40,12 +39,7 @@ public class Journal
                 foreach (Entry entry in _entries)
                 {
                     string line = $"{entry._date},{entry._promptText},{entry._entryText}";
-                    outputFile.WriteLine(line);
-
-                    //Console.WriteLine(outputFile);
-                    
-                    Console.WriteLine("File saved");
-
+                    outputFile.WriteLine(line);                    
                 }
             }
         }

@@ -4,8 +4,6 @@ using System.IO;
 
 public class Program
 {
-    public static List<Entry> _entries = new List<Entry>();
-
     static void Main(string[] args)
     {
         DisplayWelcomeMessage();
